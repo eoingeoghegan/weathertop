@@ -1,4 +1,4 @@
-<table class="table is-fullwidth">
+<table class=" table is-fullwidth is-bordered">
   <thead>
     <tr>
       <th>Code</th>
@@ -16,7 +16,12 @@
       <td>{{windSpeed}}</td>
       <td>{{windDirection}}</td>
       <td>{{pressure}}</td>
-    </tr>
+      <td>
+       <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button">
+        {{> icons/delete}}
+      </a>
+      </td>
+    </tr>  
     {{/each}}
   </tbody>
 </table>

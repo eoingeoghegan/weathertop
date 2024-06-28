@@ -2,9 +2,16 @@
 
 <div class="box box-link-hover-shadow">
   <h2 class="title">
-    <a href="/station/{{_id}}">
-      {{title}}
-    </a>
+    {{title}}
+    {{latitude}}
+    {{longitude}}
+    
   </h2>
+  <a href="/station/{{_id}}" class="button is-primary">
+    {{>icons/open}}
+  </a>
+  <a href="/dashboard/deletestation/{{_id}}" class="button is-primary">
+    {{> icons/delete}}
+  </a>
 </div>
 {{/each}}

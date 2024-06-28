@@ -1,0 +1,82 @@
+
+<section class="box">
+  <div class="columns">
+    <div class ="column card">
+      <header class="card header">
+         <p class="card-header-title">{{ station.title}}</p>
+      </header>
+      <div class="card image">
+        <figure class="image is-96x96 container">
+           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
+        </figure>  
+      </div>
+      <div class="card-content">
+        <div class="content">
+           lat:  {{station.latitude}}  <br>
+           lang: {{station.longitude}}        
+        </div>
+      </div>
+    </div>
+    <div class ="column card">
+      <header class="card header">
+         <p class="card-header-title">Weather</p>
+      </header>
+      <div class="card image">
+        <figure class="image is-96x96 container">
+           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
+        </figure>  
+      </div>
+      <div class="card-content">
+        <div class="content">
+             inject weather        
+        </div>
+      </div>
+    </div>
+    <div class ="column card">
+      <header class="card header">
+         <p class="card-header-title">Temp</p>
+      </header>
+      <div class="card image">
+        <figure class="image is-96x96 container">
+           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
+        </figure>  
+      </div>
+      <div class="card-content">
+        <div class="content">
+         {{latestReport.temperature}}  
+        </div>
+      </div>
+    </div>
+    <div class ="column card">
+      <header class="card header">
+         <p class="card-header-title">Wind</p>
+      </header>
+      <div class="card image">
+        <figure class="image is-96x96 container">
+           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
+        </figure>  
+      </div>
+      <div class="card-content">
+        <div class="content">
+            {{latestReport.windSpeed}} <br>
+            {{latestReport.windDirection}}
+        </div>
+      </div>
+    </div>
+    <div class ="column card">
+      <header class="card header">
+         <p class="card-header-title">Pressure</p>
+      </header>
+      <div class="card image">
+        <figure class="image is-96x96 container">
+           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
+        </figure>  
+      </div>
+      <div class="card-content">
+        <div class="content">
+         {{latestReport.pressure}}           
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

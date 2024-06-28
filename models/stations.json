@@ -2,16 +2,16 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "title": "Test",
-      "_id": "2b7ca091-2944-4599-a227-29041b31659d"
+      "title": "taghmon",
+      "userid": "3a9704b1-7671-4d33-ac90-9907a4c44adf",
+      "_id": "d1a7546d-1bc4-4900-a7ac-501751618882"
     },
     {
-      "title": "h",
-      "_id": "28735bd5-77bb-4398-bfb6-503fb31769fe"
-    },
-    {
-      "title": "New Test",
-      "_id": "dc1c6e31-f58d-4310-ae5d-72ee1cb4e88f"
+      "title": "Wexford",
+      "latitude": "52.3369° N",
+      "longitude": "-6.463338",
+      "userid": "6df3503d-11bd-4b33-bada-c9499d98a559",
+      "_id": "484b9876-d648-4fad-867f-2f5be9410770"
     }
   ]
 }
