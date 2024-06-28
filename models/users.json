@@ -1,0 +1,19 @@
+{
+  "file": "./models/users.json",
+  "users": [
+    {
+      "firstName": "Eoin",
+      "lastName": "Geoghegan",
+      "email": "egghead1004@gmail.com",
+      "password": "Bluewaffle12",
+      "_id": "6df3503d-11bd-4b33-bada-c9499d98a559"
+    },
+    {
+      "firstName": "Sheree",
+      "lastName": "Geoghegan",
+      "email": "sheree@gmail.com",
+      "password": "hello",
+      "_id": "3a9704b1-7671-4d33-ac90-9907a4c44adf"
+    }
+  ]
+}
