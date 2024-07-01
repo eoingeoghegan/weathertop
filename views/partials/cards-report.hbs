@@ -1,80 +1,60 @@
 
 <section class="box">
-  <div class="columns">
-    <div class ="column card">
-      <header class="card header">
-         <p class="card-header-title">{{ station.title}}</p>
+  <div class="columns has-background-black">
+    <div class ="column card has-background-grey-darker">
+      <header class="card header has-background-black">
+         <p class="card-header-title has-text-white">{{ station.title}} &nbsp&nbsp&nbsp&nbsp {{> icons/station}} </p>
       </header>
-      <div class="card image">
-        <figure class="image is-96x96 container">
-           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
-        </figure>  
-      </div>
-      <div class="card-content">
-        <div class="content">
-           lat:  {{station.latitude}}  <br>
-           lang: {{station.longitude}}        
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          <b>lat:</b>  {{station.latitude}}  <br>
+          <b>lang:</b> {{station.longitude}}        
         </div>
       </div>
     </div>
-    <div class ="column card">
-      <header class="card header">
-         <p class="card-header-title">Weather</p>
+    <div class ="column card has-background-grey-darker">
+      <header class="card header has-background-black ">
+         <p class="card-header-title has-text-white">Weather</p>
       </header>
-      <div class="card image">
-        <figure class="image is-96x96 container">
-           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
-        </figure>  
-      </div>
-      <div class="card-content">
-        <div class="content">
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
              inject weather        
         </div>
       </div>
     </div>
-    <div class ="column card">
-      <header class="card header">
-         <p class="card-header-title">Temp</p>
+    <div class ="column card has-background-grey-darker">
+      <header class="card header has-background-black ">
+         <p class="card-header-title has-text-white">Temperature &nbsp&nbsp&nbsp&nbsp {{> icons/temp}}</p>
       </header>
-      <div class="card image">
-        <figure class="image is-96x96 container">
-           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
-        </figure>  
-      </div>
-      <div class="card-content">
-        <div class="content">
-         {{latestReport.temperature}}  
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          {{latestReport.temperature}}&degC <br>
+          <b>Max:</b> {{latestReport.temperature}}&degC <br>
+          <b>Min:</b>&degC
         </div>
       </div>
     </div>
-    <div class ="column card">
-      <header class="card header">
-         <p class="card-header-title">Wind</p>
-      </header>
-      <div class="card image">
-        <figure class="image is-96x96 container">
-           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
-        </figure>  
-      </div>
-      <div class="card-content">
-        <div class="content">
-            {{latestReport.windSpeed}} <br>
-            {{latestReport.windDirection}}
+    <div class ="column card has-background-grey-darker">
+      <header class="card header has-background-black ">
+         <p class="card-header-title has-text-white">Wind &nbsp&nbsp&nbsp&nbsp {{> icons/wind}}</p>
+      </header>  
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+            {{latestReport.windSpeed}} km/h <br>
+          <b>Max:</b> {{latestReport.windSpeed}} km/h <br>
+          <b>Min:</b> km/h  
         </div>
       </div>
     </div>
-    <div class ="column card">
-      <header class="card header">
-         <p class="card-header-title">Pressure</p>
+    <div class ="column card has-background-grey-darker">
+      <header class="card header has-background-black ">
+         <p class="card-header-title has-text-white">Pressure &nbsp&nbsp&nbsp&nbsp {{>icons/pressure}}</p>
       </header>
-      <div class="card image">
-        <figure class="image is-96x96 container">
-           <img src="https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673">
-        </figure>  
-      </div>
-      <div class="card-content">
-        <div class="content">
-         {{latestReport.pressure}}           
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+         {{latestReport.pressure}} hpa <br>
+          <b>Max:</b>{{latestReport.pressure}} hpa <br>
+          <b>Min:</b>hpa
         </div>
       </div>
     </div>

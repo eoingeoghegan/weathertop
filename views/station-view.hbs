@@ -1,10 +1,31 @@
 {{> menu active="station"}}
 
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button is-danger" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Wind Direction</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>
+          {{latestReport.windDirection}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class ="section">
   <div class="title">
     {{station.title}}
   </div>
+  {{> cards-report}}
   {{> add-report}}
   {{> list-report}}
-  {{> cards-report}}
+  
 </section>
