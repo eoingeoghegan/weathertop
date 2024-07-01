@@ -1,0 +1,22 @@
+
+
+<form class="box" action="/updateUser/{{user._id}}" method="POST">
+  <label>User Details:</label>
+  <div class="field-body">
+    <div class="field">
+      <input class="input" type="text" placeholder="Enter Name" name="firstName" value="{{user.firstName}}">
+    </div>
+    <div class="field">
+      <input class="input" type="text" placeholder="Enter Surname" name="lastName" value="{{user.lastName}}">
+    </div>
+    <div class="field">
+      <input class="input" type="text" placeholder="Enter email" name="email" value="{{user.email}}">
+    </div>
+    <div class="field">
+      <input class="input" type="password" placeholder="Enter password" name="password" value="{{user.password}}">
+    </div>
+  </div>
+  <button class="button is-primary">
+    Update Details
+  </button>
+</form>

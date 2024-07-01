@@ -2,7 +2,8 @@ import express from "express";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { stationController } from "./controllers/station-controller.js";
-import {accountsController } from "./controllers/accounts-controller.js";
+import { accountsController } from "./controllers/accounts-controller.js";
+import { userDetailsController } from "./controllers/userDetails-controller.js";
 
 export const router = express.Router();
 
@@ -17,5 +18,9 @@ router.get("/", accountsController.index);
 router.get("/login", accountsController.login);
 router.get("/signup", accountsController.signup);
 router.get("/logout", accountsController.logout);
-router.post("/register", accountsController.register); 
+router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
+
+
+router.get("/updateUser", userDetailsController.index);
+router.post("/updateUser/:userid", userDetailsController.update);

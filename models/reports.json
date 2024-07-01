@@ -4,11 +4,11 @@
     {
       "code": "n50",
       "temperature": "23",
-      "windSpeed": "23",
-      "windDirection": "nw",
+      "windSpeed": "24",
+      "windDirection": "NW",
       "pressure": "34",
-      "_id": "47c21024-213b-45b1-82ff-1fce5718f890",
-      "stationid": "484b9876-d648-4fad-867f-2f5be9410770"
+      "_id": "ca7b6b64-b26c-46f5-92b0-79909726df89",
+      "stationid": "63cc0d5e-8649-472f-98ee-b821bcd520aa"
     }
   ]
 }

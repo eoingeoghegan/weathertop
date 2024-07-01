@@ -8,6 +8,7 @@
         <div class="buttons">
           <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
           <a id="about" class="button" href="/about"> About </a>
+          <a id="updateUser" class="button" href="/updateUser"> Update User Details </a>
           <a id="logout" class="button" href="/logout">Logout</a>
         </div>
       </div>
@@ -16,25 +17,6 @@
 </nav>
 
 
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button is-danger" aria-haspopup="true" aria-controls="dropdown-menu4">
-      <span>Wind Direction</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-    <div class="dropdown-content">
-      <div class="dropdown-item">
-        <p>
-          Put in wind direction info here
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
   document.getElementById("{{active}}").classList.add("is-primary");
