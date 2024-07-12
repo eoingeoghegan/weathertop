@@ -1,0 +1,77 @@
+<section class="box">
+  <div class="columns has-background-black is-size-6">
+    <div class="column card has-background-grey-darker">
+      <header class="card header has-background-black">
+        <p class="card-header-title has-text-white">{{title}} &nbsp&nbsp&nbsp&nbsp {{> icons/station}}</p>
+      </header>
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          <b>lat:</b> {{latitude}} <br>
+          <b>long:</b> {{longitude}}
+        </div>
+      </div>
+    </div>
+    <div class="column card has-background-grey-darker">
+      <header class="card header has-background-black">
+        <p class="card-header-title has-text-white">Weather</p>
+      </header>
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          {{#if latestReport}}
+           <img src="{{latestReport.weather-icon}}">
+          {{else}}
+            No weather data available
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="column card has-background-grey-darker">
+      <header class="card header has-background-black">
+        <p class="card-header-title has-text-white">Temperature</p>
+      </header>
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          {{#if latestReport.temperature}}
+            {{latestReport.temperature}}°C <br>
+            <b>Max:</b> {{latestReport.maxTemperature}}°C <br>
+            <b>Min:</b> {{latestReport.minTemperature}}°C
+          {{else}}
+            No temperature data available
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="column card has-background-grey-darker">
+      <header class="card header has-background-black">
+        <p class="card-header-title has-text-white">Wind</p>
+      </header>
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          {{#if latestReport.windSpeed}}
+            {{latestReport.windSpeed}} km/h <br>
+            <b>Max:</b> {{latestReport.maxWindSpeed}} km/h <br>
+            <b>Min:</b> {{latestReport.minWindSpeed}} km/h
+          {{else}}
+            No wind data available
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="column card has-background-grey-darker">
+      <header class="card header has-background-black">
+        <p class="card-header-title has-text-white">Pressure</p>
+      </header>
+      <div class="box card-content has-background-black">
+        <div class="content has-text-white">
+          {{#if latestReport.pressure}}
+            {{latestReport.pressure}} hPa <br>
+            <b>Max:</b> {{latestReport.maxPressure}} hPa <br>
+            <b>Min:</b> {{latestReport.minPressure}} hPa
+          {{else}}
+            No pressure data available
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

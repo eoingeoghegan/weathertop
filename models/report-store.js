@@ -14,6 +14,7 @@ export const reportStore = {
     await db.read();
     report._id = v4();
     report.stationid = stationId;
+     report.timestamp = new Date().toISOString();
     db.data.reports.push(report);
     await db.write();
     return report;
@@ -42,11 +43,4 @@ export const reportStore = {
     await db.write();
   },
   
-  async updateReport(report, updatedReport) {
-    report.code = updatedReport.code;
-    report.temperature = updatedReport.temperature;
-    report.windSpeed = updatedReport.windSpeed;
-    report.windDirection = updatedReport.windDirection;
-    report.pressure = updatedReport.pressure;
-  },
 };

@@ -2,18 +2,32 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "title": "wexford",
-      "latitude": "52.3369° N",
-      "longitude": "-6.463338",
+      "title": "Clare",
+      "latitude": "34.343",
+      "longitude": "777443",
       "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
-      "_id": "63cc0d5e-8649-472f-98ee-b821bcd520aa"
+      "_id": "189e3866-da41-473c-93d7-1f55b7ea0795"
     },
     {
-      "title": "Taghmon",
+      "title": "wexford",
       "latitude": "23.45",
+      "longitude": "-6.463338",
+      "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
+      "_id": "3179d181-2b2b-4863-8de9-2e7532cae748"
+    },
+    {
+      "title": "Donegal",
+      "latitude": "1234",
       "longitude": "23.00",
-      "userid": "3414db0b-9a58-43c0-9513-b383e121a7d2",
-      "_id": "fe4155d0-0ea5-4acf-9aa8-6f4fe0c5b414"
+      "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
+      "_id": "36d55e7b-4fe9-441a-bc69-2fb9e5e56822"
+    },
+    {
+      "title": "Kerry",
+      "latitude": "",
+      "longitude": "",
+      "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
+      "_id": "74155319-7d8f-4e8e-a58f-f2b86775bf82"
     }
   ]
 }

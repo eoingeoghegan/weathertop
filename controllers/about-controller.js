@@ -1,3 +1,6 @@
+// aboutController is exported and can be imported elsewhere. 
+// The index will render the viewData: title"About WeatherTop" and the about-view.
+
 export const aboutController = {
   index(request, response) {
     const viewData = {
@@ -7,3 +10,4 @@ export const aboutController = {
     response.render("about-view", viewData);
   },
 };
+
