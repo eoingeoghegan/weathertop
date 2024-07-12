@@ -1,6 +1,7 @@
 <table class=" table is-fullwidth is-bordered">
   <thead>
     <tr>
+      <th>TimeStamp</th>
       <th>Code</th>
       <th>Temp</th>
       <th>Wind Speed</th>
@@ -11,6 +12,7 @@
   <tbody>
     {{#each station.reports}}
     <tr>
+      <td>{{timestamp}}</td>
       <td>{{code}}</td>
       <td>{{temperature}}</td>
       <td>{{windSpeed}}</td>

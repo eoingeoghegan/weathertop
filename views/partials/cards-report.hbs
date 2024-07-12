@@ -14,11 +14,11 @@
     </div>
     <div class ="column card has-background-grey-darker">
       <header class="card header has-background-black ">
-         <p class="card-header-title has-text-white">Weather</p>
+         <p class="card-header-title has-text-white">Weather <img src ="{{weatherIcon}}"</p>
       </header>
       <div class="box card-content has-background-black">
         <div class="content has-text-white">
-             inject weather        
+             {{weather}}        
         </div>
       </div>
     </div>
@@ -29,8 +29,8 @@
       <div class="box card-content has-background-black">
         <div class="content has-text-white">
           {{latestReport.temperature}}&degC <br>
-          <b>Max:</b> {{latestReport.temperature}}&degC <br>
-          <b>Min:</b>&degC
+          <b>Max:</b> {{maxTemp}}&degC <br>
+          <b>Min:</b> {{minTemp}}&degC
         </div>
       </div>
     </div>
@@ -40,9 +40,9 @@
       </header>  
       <div class="box card-content has-background-black">
         <div class="content has-text-white">
-            {{latestReport.windSpeed}} km/h <br>
-          <b>Max:</b> {{latestReport.windSpeed}} km/h <br>
-          <b>Min:</b> km/h  
+            {{latestReport.windSpeed}} bft <br>
+          <b>Max:</b> {{maxWind}} mph <br>
+          <b>Min:</b> {{minWind}} mph 
         </div>
       </div>
     </div>
@@ -53,8 +53,8 @@
       <div class="box card-content has-background-black">
         <div class="content has-text-white">
          {{latestReport.pressure}} hpa <br>
-          <b>Max:</b>{{latestReport.pressure}} hpa <br>
-          <b>Min:</b>hpa
+          <b>Max:</b>{{maxPressure}} hpa <br>
+          <b>Min:</b>{{minPressure}}hpa
         </div>
       </div>
     </div>
