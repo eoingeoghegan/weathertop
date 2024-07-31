@@ -19,6 +19,7 @@ The map is hardcoded with locations and does not update when a new station is en
 ## Bugs
 
 1) When the email is updated the it shows that the site isnt repsponding, however it saves the new email entered.If you logout you can log back in with the new email address.
+<br>** Updated email redirects to the signup/login page and any other changes reutns to dashboard.
 
 2) Any information that is saved in file.json sometimes takes a while to show however it works.
 

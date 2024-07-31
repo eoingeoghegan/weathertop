@@ -28,8 +28,13 @@ export const userDetailsController = {
       password: request.body.password,
     };
     console.log(`Updating User details!-id:${user._id}`);
-    
+    //if the updated email address is changed(not equal to the original) then redirect to signin page
+    //otherwise anything is updated returns to the dashboard.
     await userStore.updateUserDetails(user, updatedUser);
-    response.redirect("/dashboard/");
+     if(updatedUser.email !== userEmail){
+    response.redirect("/"); }
+     else { 
+       response.redirect("/dashboard/")
+     }
   },
 };
