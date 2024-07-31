@@ -1,0 +1,17 @@
+<div id="map" style="height: 300px;"></div>
+
+<script>
+let map = L.map('map').setView([53.2734, -7.77832031], 6);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+  
+  //marker for clare
+  let marker = L.marker([52.857257450000006, -8.937435925994537]).addTo(map);
+    marker = L.marker([54.92075415, -7.952385214651309]).addTo(map);
+    marker = L.marker([52.14533445, -9.517401092833236]).addTo(map);
+    marker = L.marker([52.3367671, -6.4601397]).addTo(map);
+  
+</script>

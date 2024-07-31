@@ -1,21 +1,21 @@
 <section class="box">
-  <div class="columns has-background-black is-size-6">
-    <div class="column card has-background-grey-darker">
+  <div class="columns has-background-white is-size-6">
+    <div class="column ">
       <header class="card header has-background-black">
         <p class="card-header-title has-text-white">{{title}} &nbsp&nbsp&nbsp&nbsp {{> icons/station}}</p>
       </header>
-      <div class="box card-content has-background-black">
+      <div class="card-content has-background-black">
         <div class="content has-text-white">
           <b>lat:</b> {{latitude}} <br>
           <b>long:</b> {{longitude}}
         </div>
       </div>
     </div>
-    <div class="column card has-background-grey-darker">
+    <div class="column card ">
       <header class="card header has-background-black">
         <p class="card-header-title has-text-white">Weather</p>
       </header>
-      <div class="box card-content has-background-black">
+      <div class="card-content has-background-black">
         <div class="content has-text-white">
           {{#if latestReport}}
            <img src="{{latestReport.weather-icon}}">
@@ -25,13 +25,13 @@
         </div>
       </div>
     </div>
-    <div class="column card has-background-grey-darker">
+    <div class="column card ">
       <header class="card header has-background-black">
         <p class="card-header-title has-text-white">Temperature</p>
       </header>
       <div class="box card-content has-background-black">
         <div class="content has-text-white">
-          {{#if latestReport.temperature}}
+          {{#if latestReport}}
             {{latestReport.temperature}}°C <br>
             <b>Max:</b> {{latestReport.maxTemperature}}°C <br>
             <b>Min:</b> {{latestReport.minTemperature}}°C
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="column card has-background-grey-darker">
+    <div class="column card h">
       <header class="card header has-background-black">
         <p class="card-header-title has-text-white">Wind</p>
       </header>
@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="column card has-background-grey-darker">
+    <div class="column card">
       <header class="card header has-background-black">
         <p class="card-header-title has-text-white">Pressure</p>
       </header>

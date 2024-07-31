@@ -30,8 +30,10 @@ export const dashboardController = {
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stations,
+      
     };
     console.log(loggedInUser);
+    
      
     console.log("dashboard rendering with the stations:", stations);
     response.render("dashboard-view", viewData);
