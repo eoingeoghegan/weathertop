@@ -1,5 +1,9 @@
 import { stationStore } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
+import axios from "axios";
+const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=Clare,Ireland&units=metric&appid=04dc74cc03bcbcc6cdf06dcbaa070d0d`;
+const apiKey = "04dc74cc03bcbcc6cdf06dcbaa070d0d";
+
 
 // The station view locates the station by id that has been added, the reports entered saved by the stations Id and the latestReport entered by locating the report at index[0].
 // This info thats located and added to the viewData so it can then be render for the user. The station view controls the layout of the info.
@@ -10,6 +14,33 @@ export const stationController = {
     const reports = await reportStore.getReportsByStationId(station._id);
     const latestReport = reports.find((_, index)=> index === 0);
     
+    let report = {};
+    const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${station.title},Ireland&units=metric&appid=04dc74cc03bcbcc6cdf06dcbaa070d0d`;
+
+    const result = await axios.get(weatherRequestUrl);
+    if (result.status == 200) {
+      const currentWeather = result.data;
+      report.code = currentWeather.weather[0].id;
+      report.temperature = currentWeather.main.temp;
+      report.windSpeed = currentWeather.wind.speed;
+      report.pressure = currentWeather.main.pressure;
+      report.windDirection = currentWeather.wind.deg;
+    }
+    
+    const forecastRequestUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${station.title},Ireland&units=metric&appid=${apiKey}`;
+    const forecastResult = await axios.get(forecastRequestUrl)
+      if(result.status ==200){ 
+      //5 day forecast report
+      //console.log(JSON.stringify(result.data, null, 2));
+      report.tempTrend = [];
+      report.trendLabels = [];
+      const trends = forecastResult.data.list;
+      for(let i =0; i <10; i++) {
+        report.tempTrend.push(trends[i].main.temp);
+        report.trendLabels.push(trends[i].dt_txt);
+      }
+    }
+   
     let maxPressure = "";
     let minPressure = "";
      
@@ -59,29 +90,74 @@ export const stationController = {
     }
     }
      
+    let windDeg = "";
     
+    if (latestReport) {
+      if (latestReport.windDirection.toUpperCase() === 'N') {
+        windDeg = "350,360,10";
+      } else if (latestReport.windDirection.toUpperCase() === 'N/NE' || 'NNE') {
+        windDeg = "20,30";
+    } else if (latestReport.windDirection.toUpperCase() === 'NE') {
+        windDeg = "40,50";
+    } else if (latestReport.windDirection.toUpperCase() === 'E/NE' || 'ENE') {
+        windDeg = "60,70";
+    } else if (latestReport.windDirection.toUpperCase() === 'E') {
+        windDeg = "80,90,100";
+    } else if (latestReport.windDirection.toUpperCase() === 'E/SE' || 'ESE') {
+        windDeg = "110,120";
+    } else if (latestReport.windDirection.toUpperCase() === 'SE') {
+        windDeg = "130,140";
+    } else if (latestReport.windDirection.toUpperCase() === 'S/SE' || 'SSE') {
+        windDeg = "150,160";
+    } else if (latestReport.windDirection.toUpperCase() === 'S') {
+        windDeg = "170,180,190";
+    } else if (latestReport.windDirection.toUpperCase() === 'S/SW' || 'SWS') {
+        windDeg = "200,210";
+    } else if (latestReport.windDirection.toUpperCase() === 'SW') {
+        windDeg = "220,230";
+    } else if (latestReport.windDirection.toUpperCase() === 'W/SW' || 'WSW') {
+        windDeg = "240,250";
+    } else if (latestReport.windDirection.toUpperCase() === 'W') {
+        windDeg = "260,270,280";
+    } else if (latestReport.windDirection.toUpperCase() === 'W/NW' || 'WNW') {
+        windDeg = "290,300";
+    } else if (latestReport.windDirection.toUpperCase() === 'NW') {
+        windDeg = "310,320";
+    } else if (latestReport.windDirection.toUpperCase() === 'N/NW' || 'NNW') {
+        windDeg = "330,340";
+    } 
+    }
     
     let minTemp = "";
     let maxTemp = "";
       
     
     if(latestReport) {
-      if (latestReport.temperature >= 0 && latestReport.temperature <= 2){
+      if (latestReport.temperature >= 0 && latestReport.temperature <= 4){
         minTemp = 0;
-        maxTemp = 2;
+        maxTemp = 4;
       }
-     else if (latestReport.temperature >= 3 && latestReport.temperature <= 5){
-        minTemp = 3;
-        maxTemp = 5;
-      }  else if (latestReport.temperature >= 6 && latestReport.temperature <= 8){
-        minTemp = 6;
-        maxTemp = 8;
-      }  else if (latestReport.temperature >= 9 && latestReport.temperature <= 12){
-        minTemp = 9;
-        maxTemp = 12;
-      }  else if (latestReport.temperature >= 13 && latestReport.temperature <= 15){
-        minTemp = 13;
-        maxTemp = 15;
+     else if (latestReport.temperature >= 5 && latestReport.temperature <= 9){
+        minTemp = 5;
+        maxTemp = 9;
+      }  else if (latestReport.temperature >= 10 && latestReport.temperature <= 14){
+        minTemp = 10;
+        maxTemp = 14;
+      }  else if (latestReport.temperature >= 15 && latestReport.temperature <= 19){
+        minTemp = 15;
+        maxTemp = 19;
+      } else if (latestReport.temperature >= 20 && latestReport.temperature <= 25){
+         minTemp = 20;
+        maxTemp = 25;
+      } else if (latestReport.temperature >= 26 && latestReport.temperature <= 30){
+         minTemp = 26;
+        maxTemp = 30;
+      } else if (latestReport.temperature >= 31 && latestReport.temperature <= 35){
+         minTemp = 31;
+        maxTemp = 35;
+      } else if (latestReport.temperature >= 36 && latestReport.temperature <= 40){
+         minTemp = 36;
+        maxTemp = 40;
       }
     }
   
@@ -241,8 +317,11 @@ export const stationController = {
       maxTemp: maxTemp,
       maxWind: maxWind,
       minWind: minWind,
+      windDeg: windDeg,
       maxPressure: maxPressure,
       minPressure: minPressure,
+      reading: report,
+      
       
     };
     
@@ -256,13 +335,18 @@ export const stationController = {
 // The timestamp records the time and date the entry was recorded.
   async addReport(request, response) {
     const station = await stationStore.getStationById(request.params.id);
+    
+
+
+    
     const newReport = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
-      windDirection: Number(request.body.windDirection),
+      windDirection: request.body.windDirection,
       pressure: Number(request.body.pressure),
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toISOString(),  
+      
     };
      
     console.log(`adding report ${newReport.code}`);
