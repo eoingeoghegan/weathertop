@@ -28,6 +28,20 @@
       "longitude": "-8.937435925994537",
       "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
       "_id": "3a67cb86-0fbc-41a4-a5fb-4dd0cbffecf5"
+    },
+    {
+      "title": "Dublin",
+      "latitude": "53.33306",
+      "longitude": "-6.24889",
+      "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
+      "_id": "13a64ee0-df28-4f0b-b4fa-f23a92206d73"
+    },
+    {
+      "title": "Cork",
+      "latitude": "51.822198",
+      "longitude": " -8.474121",
+      "userid": "7b3dda50-88cc-4267-8f08-737e2e40e0be",
+      "_id": "15897126-913d-40e0-b396-d9f01e2cc3c0"
     }
   ]
 }

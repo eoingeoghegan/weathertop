@@ -1,4 +1,7 @@
+
+
 <div id="map" style="height: 300px;"></div>
+
 
 <script>
 let map = L.map('map').setView([53.2734, -7.77832031],6);
@@ -8,10 +11,34 @@ let map = L.map('map').setView([53.2734, -7.77832031],6);
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
   
-  //marker for clare
-  let marker = L.marker([52.857257450000006, -8.937435925994537]).addTo(map);
-    marker = L.marker([54.92075415, -7.952385214651309]).addTo(map);
-    marker = L.marker([52.14533445, -9.517401092833236]).addTo(map);
-    marker = L.marker([52.3367671, -6.4601397]).addTo(map);
+  //code taken from leafletjs.com to display the map and markers
+  
+  
+  // hardcoded markers
+  // marker = L.marker([54.92075415, -7.952385214651309]).addTo(map);
+  // marker = L.marker([52.14533445, -9.517401092833236]).addTo(map);
+  // marker = L.marker([52.3367671, -6.4601397]).addTo(map);
+  
+  // loop possibly?
+  //  for(i=0; i<stations.length; i++) {
+  //   let marker = L.marker([{{this.stattion.latitude}}, {{this.station/longitude}}]).addTo(map);
+  //  }  
+  
+  // itierates between the stations and uses the coords to add that stations lat and long as a marker to the map.
+  {{#each stations}}
+            L.marker([{{this.latitude}}, {{this.longitude}}]).addTo(map);
+        {{/each}}
+  
+  //  when the map is clicked at location it uses this to show the coordinates. From leaflet.js.com
+  var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("The coordinates for this location are " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
   
 </script>
