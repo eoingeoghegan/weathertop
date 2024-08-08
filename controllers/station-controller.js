@@ -56,75 +56,84 @@ export const stationController = {
         minPressure = 1000;
       }
     }
+     
     
     let minWind = "";
     let maxWind = ""; 
     if(latestReport) {
-      if (latestReport.windSpeed = 1){
+      if (latestReport.windSpeed >= 0 && latestReport.windSpeed <=0.99){
+        minWind = 0.5;
+        maxWind = 1;
+      } else if (latestReport.windSpeed >= 1 && latestReport.windSpeed <=1.99){
         minWind = 1;
         maxWind = 3;
-      } else if (latestReport.windSpeed = 2){
+      } else if (latestReport.windSpeed >= 2 && latestReport.windSpeed <=2.99){
         minWind = 4;
         maxWind = 7;
-    }  else if (latestReport.windSpeed = 3){
+    }  else if (latestReport.windSpeed >= 3 && latestReport.windSpeed <=3.99){
         minWind = 8;
         maxWind = 12;
-    }  else if (latestReport.windSpeed = 4){
+    }  else if (latestReport.windSpeed >= 4 && latestReport.windSpeed <=4.99){
         minWind = 13;
         maxWind = 18;
-    }  else if (latestReport.windSpeed = 5){
+    }  else if (latestReport.windSpeed >= 5 && latestReport.windSpeed <=5.99){
         minWind = 19;
         maxWind =24;
-    }  else if (latestReport.windSpeed = 6){
+    }  else if (latestReport.windSpeed >= 6 && latestReport.windSpeed <=6.99){
         minWind = 25;
         maxWind = 31;
-    }  else if (latestReport.windSpeed = 7){
+    }  else if (latestReport.windSpeed >= 7 && latestReport.windSpeed <=7.99){
         minWind = 32;
         maxWind = 38;
-    }  else if (latestReport.windSpeed = 8){
+    }  else if (latestReport.windSpeed >= 8 && latestReport.windSpeed <=8.99){
         minWind = 39;
         maxWind = 46;
-    }  else if (latestReport.windSpeed = 9){
+    }  else if (latestReport.windSpeed >= 9 && latestReport.windSpeed <=9.99){
         minWind = 47;
         maxWind = 54;
+    } 
+      
     }
+    let windKph = "";
+      if(latestReport) {
+        windKph = latestReport.windSpeed * 1.6;
     }
      
     let windDeg = "";
     
     if (latestReport) {
-      if (latestReport.windDirection.toUpperCase() === 'N') {
-        windDeg = "350,360,10";
-      } else if (latestReport.windDirection.toUpperCase() === 'N/NE' || 'NNE') {
-        windDeg = "20,30";
-    } else if (latestReport.windDirection.toUpperCase() === 'NE') {
-        windDeg = "40,50";
-    } else if (latestReport.windDirection.toUpperCase() === 'E/NE' || 'ENE') {
-        windDeg = "60,70";
-    } else if (latestReport.windDirection.toUpperCase() === 'E') {
-        windDeg = "80,90,100";
-    } else if (latestReport.windDirection.toUpperCase() === 'E/SE' || 'ESE') {
-        windDeg = "110,120";
-    } else if (latestReport.windDirection.toUpperCase() === 'SE') {
-        windDeg = "130,140";
-    } else if (latestReport.windDirection.toUpperCase() === 'S/SE' || 'SSE') {
-        windDeg = "150,160";
-    } else if (latestReport.windDirection.toUpperCase() === 'S') {
-        windDeg = "170,180,190";
-    } else if (latestReport.windDirection.toUpperCase() === 'S/SW' || 'SWS') {
-        windDeg = "200,210";
-    } else if (latestReport.windDirection.toUpperCase() === 'SW') {
-        windDeg = "220,230";
-    } else if (latestReport.windDirection.toUpperCase() === 'W/SW' || 'WSW') {
-        windDeg = "240,250";
-    } else if (latestReport.windDirection.toUpperCase() === 'W') {
-        windDeg = "260,270,280";
-    } else if (latestReport.windDirection.toUpperCase() === 'W/NW' || 'WNW') {
-        windDeg = "290,300";
-    } else if (latestReport.windDirection.toUpperCase() === 'NW') {
-        windDeg = "310,320";
-    } else if (latestReport.windDirection.toUpperCase() === 'N/NW' || 'NNW') {
-        windDeg = "330,340";
+      if (latestReport.windDirection >=350 && latestReport.windDirection <= 360 && latestReport.windDirection || latestReport.windDirection >=10 && latestReport.windDirection <=19) {
+        windDeg = 'N';
+      } else if (latestReport.windDirection >=20 && latestReport.windDirection <=30 ){
+        windDeg = 'NNE'
+    } else if (latestReport.windDirection >=40 && latestReport.windDirection <=50) {
+        windDeg = 'NE';
+    } else if (latestReport.windDirection >=60 && latestReport.windDirection <=60) {
+        windDeg = 'ENE';
+    } else if (latestReport.windDirection >=80 && latestReport.windDirection <=100) {
+        windDeg = 'E';
+    } else if (latestReport.windDirection >=110 && latestReport.windDirection <=120) {
+        windDeg = 'ESE';
+    } else if (latestReport.windDirection >=130 && latestReport.windDirection <=140) {
+        windDeg = 'SE';
+    } else if (latestReport.windDirection >=150 && latestReport.windDirection <=160) {
+        windDeg = 'SSE';
+    } else if (latestReport.windDirection >=170 && latestReport.windDirection <=190) {
+        windDeg = "S";
+    } else if (latestReport.windDirection >=200 && latestReport.windDirection <=210) {
+        windDeg = 'SWS';
+    } else if (latestReport.windDirection >=220 && latestReport.windDirection <=230) {
+        windDeg = 'SW';
+    } else if (latestReport.windDirection >=240 && latestReport.windDirection <=250) {
+        windDeg = 'WSW';
+    } else if (latestReport.windDirection >=260 && latestReport.windDirection <=280) {
+        windDeg = 'W';
+    } else if (latestReport.windDirection >=290 && latestReport.windDirection <=300) {
+        windDeg ='WNW';
+    } else if (latestReport.windDirection >=310 && latestReport.windDirection <=320) {
+        windDeg = 'NW';
+    } else if (latestReport.windDirection >=330 && latestReport.windDirection <=340) {
+        windDeg = 'NNW';
     } 
     }
     
@@ -159,6 +168,7 @@ export const stationController = {
          minTemp = 36;
         maxTemp = 40;
       }
+      
     }
   
     
@@ -182,6 +192,8 @@ export const stationController = {
           weatherIcon = "https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-night-mist.png?v=1719312080871";
                  } else if(latestReport.code ===800) {
           weatherIcon = "https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-clear-sky.png?v=1719311663673";
+                 } else if(latestReport.code >=801 && latestReport.code <=804) {
+          weatherIcon = "https://cdn.glitch.global/4f8dd324-2430-43fc-b3bb-1233580166d0/day-night-scattered-clouds.png?v=1719311761921";
                 
       }
       switch (latestReport.code) {
@@ -298,6 +310,14 @@ export const stationController = {
           break;
         case 800:	weather =	"	Clear	clear sky";
           break;
+        case 801:	weather =	"	Few Clouds";
+          break;
+        case 802:	weather =	"	Scattered Clouds";
+          break;
+        case 803:	weather =	"	Broken Clouds";
+          break;
+        case 804:	weather =	"	Overcast Clouds";
+          break;
         default:
           weather = "unknown";
        
@@ -317,6 +337,7 @@ export const stationController = {
       maxTemp: maxTemp,
       maxWind: maxWind,
       minWind: minWind,
+      windKph: windKph,
       windDeg: windDeg,
       maxPressure: maxPressure,
       minPressure: minPressure,
@@ -336,22 +357,30 @@ export const stationController = {
   async addReport(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     
-
-
     
+    //tried if the weather added is manual or the current that it will display either depending on the button pressed, which worked.
+    let report = {};
+    const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${station.title},Ireland&units=metric&appid=04dc74cc03bcbcc6cdf06dcbaa070d0d`;
+
+    const result = await axios.get(weatherRequestUrl);
+    if (result.status == 200) {
+      const currentWeather = result.data;
+   
     const newReport = {
-      code: Number(request.body.code),
-      temperature: Number(request.body.temperature),
-      windSpeed: Number(request.body.windSpeed),
-      windDirection: request.body.windDirection,
-      pressure: Number(request.body.pressure),
-      timestamp: new Date().toISOString(),  
-      
-    };
+      code: Number(request.body.code) || currentWeather.weather[0].id,
+      temperature: Number(request.body.temperature) || currentWeather.main.temp,
+      windSpeed: Number(request.body.windSpeed) || currentWeather.wind.speed,
+      windDirection: request.body.windDirection || currentWeather.wind.deg,
+      pressure: Number(request.body.pressure) ||currentWeather.main.pressure , 
+      timestamp: new Date().toISOString(),
+    }
+    
+  
      
     console.log(`adding report ${newReport.code}`);
     await reportStore.addReport(station._id, newReport);
     response.redirect("/station/" + station._id);
+  }
   },
 // The stationId and reportId are requested, it then goes to the reportStore deleteReport function and executes this.
 // The user is then redirected to the station view with stationsID.

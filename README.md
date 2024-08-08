@@ -2,7 +2,9 @@
 
 -This app allows the user to create weather stations and record weather reports manually.
 
--The user can create an account and update their details. -The user is show a dashboard where they can manually enter a stations name. This will create a station and its location will be visible on the interactive map. 
+-The user can create an account and update their details. <br>
+<br>
+-The user is show a dashboard where they can manually enter a stations name. This will create a station and its location will be visible on the interactive map. To get the lat long click the map.
 
 -The newly created station can be be opened to view its weather information or can be deleted. 
 
