@@ -8,10 +8,7 @@ export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationByUserId(loggedInUser._id);
-      
-       
-     
-  
+    
  
 // this allows th stations titles to be sorted in alphabetical order using sort(). 
 // It compares the titles so if the a.title < b.title then a comes before b giving -1. 
@@ -30,11 +27,11 @@ export const dashboardController = {
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stations,
+    
       
     };
-    console.log(loggedInUser);
-    
-     
+    console.log("logged in user ", loggedInUser);
+   
     console.log("dashboard rendering with the stations:", stations);
     response.render("dashboard-view", viewData);
   

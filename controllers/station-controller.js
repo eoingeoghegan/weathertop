@@ -12,7 +12,7 @@ export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     const reports = await reportStore.getReportsByStationId(station._id);
-    const latestReport = reports.find((_, index)=> index === 0);
+    const latestReport = reports[0];
     
     let report = {};
     const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${station.title},Ireland&units=metric&appid=04dc74cc03bcbcc6cdf06dcbaa070d0d`;
