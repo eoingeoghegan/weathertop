@@ -60,6 +60,16 @@
       "timestamp": "2024-08-08T12:45:55.699Z",
       "_id": "4fa39571-73d4-4b5d-91bc-a98a8504631e",
       "stationid": "3a67cb86-0fbc-41a4-a5fb-4dd0cbffecf5"
+    },
+    {
+      "code": 800,
+      "temperature": 13.7,
+      "windSpeed": 4.63,
+      "windDirection": 290,
+      "pressure": 1014,
+      "timestamp": "2024-08-12T09:48:02.817Z",
+      "_id": "9fdbb8fd-3a72-474c-a58e-11ab18697118",
+      "stationid": "59ba884d-b635-4613-88c0-0ae03f69d4de"
     }
   ]
 }
