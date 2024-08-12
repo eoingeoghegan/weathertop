@@ -94,9 +94,9 @@ export const stationController = {
     } 
       
     }
-    let windKph = "";
+    let windKmh = "";
       if(latestReport) {
-        windKph = latestReport.windSpeed * 1.6;
+        windKmh = latestReport.windSpeed * 1.6;
     }
      
     let windDeg = "";
@@ -337,7 +337,7 @@ export const stationController = {
       maxTemp: maxTemp,
       maxWind: maxWind,
       minWind: minWind,
-      windKph: windKph,
+      windKmh: windKmh,
       windDeg: windDeg,
       maxPressure: maxPressure,
       minPressure: minPressure,

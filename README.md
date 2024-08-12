@@ -10,12 +10,16 @@
 
 -Inside a station the weather report can be manually entered and submitted. -The viewer can also see the current weather from that station which is received from openweather.org. -A weather trend chart is viewable for that location.
 
-Deployed site: https://weatherstation-assignment.glitch.me/
+Deployed site: https://weathertop-assignment-20036009.glitch.me/
 
 
 
 user : egghead100@gmail.com, 
 password: 1111
+
+## Note
+
+-On this dashboard cards, I couldn't figure out how to display the weather report from the station cards.
 
 
 ## Bugs
